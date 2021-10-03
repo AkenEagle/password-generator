@@ -35,7 +35,24 @@ const generatePassword = function () {
   // Empty password at first
   let password = "";
 
-  // Which character types to include
+  // Which character types to include in the password
+  let arrayCharacters = [];
+
+  if (includeLowercase) {
+    arrayCharacters.push(alphabet.split(""))
+  }
+
+  if (includeUppercase) {
+    arrayCharacters.push(alphabet.toUpperCase().split(""))
+  }
+
+  if (includeNumeric) {
+    arrayCharacters.push(numeric.split(""))
+  }
+
+  if (includeSpecial) {
+    arrayCharacters.push(special.split(""))
+  }
 
   // Randomly assign characters in the password string
   for (let i = 0; i < passwordLength; i++) {
