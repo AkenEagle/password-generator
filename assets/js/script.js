@@ -31,12 +31,18 @@ const generatePassword = function () {
   }
 
   // 7) GENERATE PASSWORD
+
+  // Empty password at first
   let password = "";
 
+  // Which character types to include
+
+  // Randomly assign characters in the password string
   for (let i = 0; i < passwordLength; i++) {
     password += i;
   }
 
+  // Password returned from the whole function
   return password;
 }
 
