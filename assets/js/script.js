@@ -11,12 +11,22 @@ const generatePassword = function () {
   const includeLowercase = promptIncludeLowercase();
 
   // 3) PROMPT IF INCLUDE UPPERCASE
+  const includeUppercase = promptIncludeUppercase();
 
   // 4) PROMPT IF INCLUDE NUMERIC
+  const includeNumeric = promptIncludeNumeric();
 
   // 5) PROMPT IF INCLUDE SPECIAL CHARACTERS
+  const includeSpecial = promptIncludeSpecial();
 
-  // 6) RETURN A PASSWORD FROM THE CRTIERIA ABOVE
+  // 6) CHECK IF AT LEAST ONE CHARACTER TYPE WAS SELECTED
+  if(!includeLowercase && !includeUppercase && !includeNumeric && !includeSpecial) {
+    alert('You have to select AT LEAST 1 CHARACTER TYPE when prompted lowercase, uppercase, numeric or special!')
+    return false;
+  }
+
+  // GENERATE PASSWORD
+  const password = 
 }
 
 const promptPasswordLength = function () {
@@ -32,6 +42,21 @@ const promptPasswordLength = function () {
 const promptIncludeLowercase = function () {
   const lowerCase = confirm('Do you want to include lowercase characters?\nChoose OK or Cancel');
   return lowerCase;
+}
+
+const promptIncludeUppercase = function () {
+  const upperCase = confirm('Do you want to include UPPERCASE characters?\nChoose OK or Cancel');
+  return upperCase;
+}
+
+const promptIncludeNumeric = function () {
+  const numeric = confirm('Do you want to include NUMERIC characters?\nChoose OK or Cancel');
+  return numeric;
+}
+
+const promptIncludeSpecial = function () {
+  const special = confirm('Do you want to include SPECIAL characters?\nChoose OK or Cancel');
+  return special;
 }
 
 // Write password to the #password input
