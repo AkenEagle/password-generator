@@ -1,6 +1,11 @@
 // Assignment Code
 const generateBtn = document.querySelector('#generate');
 
+// Characters includable in a password
+const alphabet = "abcdefghijklmnopqrstuvwxyz"
+const numeric = "0123456789"
+const special = "!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
+
 const generatePassword = function () {
 
   // 1) PROMPT PASSWORD LENGTH
