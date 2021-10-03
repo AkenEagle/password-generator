@@ -56,7 +56,14 @@ const generatePassword = function () {
 
   // Randomly assign characters in the password string
   for (let i = 0; i < passwordLength; i++) {
-    password += i;
+    // Get random array from arrayCharacters
+    const randomArray = arrayCharacters[Math.floor(Math.random()*arrayCharacters.length)];
+
+    // Get random character from the previous random array
+    const randomChar = randomArray[Math.floor(Math.random()*randomArray.length)];
+
+    // Add this random character to the password string
+    password += randomChar
   }
 
   // Password returned from the whole function
