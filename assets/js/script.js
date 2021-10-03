@@ -79,7 +79,7 @@ const promptPasswordLength = function () {
     alert('You have to choose a password length between 8 and 128!')
     return false;
   } else {
-    return passwordLength;
+    return parseInt(passwordLength);
   }
 }
 
