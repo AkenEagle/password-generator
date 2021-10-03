@@ -8,29 +8,29 @@ const special = "!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
 
 const generatePassword = function () {
 
-  // 1) PROMPT PASSWORD LENGTH
+  // Prompt password length
   const passwordLength = promptPasswordLength();
   if (!passwordLength) return false;
 
-  // 2) PROMPT IF INCLUDE LOWERCASE
+  // Prompt if include lowercase characters
   const includeLowercase = promptIncludeLowercase();
 
-  // 3) PROMPT IF INCLUDE UPPERCASE
+  // Prompt if include uppercase characters
   const includeUppercase = promptIncludeUppercase();
 
-  // 4) PROMPT IF INCLUDE NUMERIC
+  // Prompt if include numberic characters
   const includeNumeric = promptIncludeNumeric();
 
-  // 5) PROMPT IF INCLUDE SPECIAL CHARACTERS
+  // Prompt if include special characters
   const includeSpecial = promptIncludeSpecial();
 
-  // 6) CHECK IF AT LEAST ONE CHARACTER TYPE WAS SELECTED
+  // Check if at least one character type was selected
   if(!includeLowercase && !includeUppercase && !includeNumeric && !includeSpecial) {
     alert('You have to select AT LEAST 1 CHARACTER TYPE when prompted lowercase, uppercase, numeric or special!')
     return false;
   }
 
-  // 7) GENERATE PASSWORD
+  // Generate password
 
   // Empty password at first
   let password = "";
@@ -67,15 +67,16 @@ const generatePassword = function () {
   }
 
   // Password returned from the whole function
+  alert('Your password has been generated!')
   return password;
 }
 
 // Prompt functions
 
 const promptPasswordLength = function () {
-  const passwordLength = prompt('Choose a password length between 8 and 128.')
+  const passwordLength = prompt('Choose a password length between 8 and 128.\nType a number between 8 and 128 below.')
   if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
-    alert('You have to choose a passwrod length between 8 and 128!')
+    alert('You have to choose a password length between 8 and 128!')
     return false;
   } else {
     return passwordLength;
