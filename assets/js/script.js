@@ -25,9 +25,17 @@ const generatePassword = function () {
     return false;
   }
 
-  // GENERATE PASSWORD
-  const password = 
+  // 7) GENERATE PASSWORD
+  let password = "";
+
+  for (let i = 0; i < passwordLength; i++) {
+    password += i;
+  }
+
+  return password;
 }
+
+// Prompt functions
 
 const promptPasswordLength = function () {
   const passwordLength = prompt('Choose a password length between 8 and 128.')
